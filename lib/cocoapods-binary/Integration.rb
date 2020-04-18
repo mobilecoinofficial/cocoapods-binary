@@ -190,7 +190,7 @@ module Pod
                 end
 
                 # to avoid the warning of missing license
-                spec.attributes_hash["license"] = {} 
+                spec.root.attributes_hash["license"] = {}
             end
 
         end
