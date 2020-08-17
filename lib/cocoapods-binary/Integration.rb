@@ -163,6 +163,10 @@ module Pod
                 spec.attributes_hash["vendored_frameworks"] = original_vendored_frameworks
                 spec.attributes_hash["source_files"] = []
 
+                # to remove vendored libraries, since they will have been statically linked into
+                # the prebuilt framework, and therefore do not need to be included again.
+                spec.attributes_hash["vendored_libraries"] = []
+
                 # to remove the resurce bundle target. 
                 # When specify the "resource_bundles" in podspec, xcode will generate a bundle 
                 # target after pod install. But the bundle have already built when the prebuit
